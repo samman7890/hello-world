@@ -1,4 +1,30 @@
+
 # Coding a simple password manager
+
+## What this program does
+
+This is a command-line password manager written in Python. It allows users to:
+
+- Add login credentials for websites
+- Retrieve saved passwords
+- Save and load passwords to/from a file (`vault.txt`)
+- Encrypt passwords using Caesar cipher (for educational purposes)
+- Generate strong random passwords (optional feature)
+- Check password strength when adding a new password
+
+> Note: This project is for educational use only. Caesar cipher is not secure for real-world use.
+
+## How to Run
+
+1. Open the terminal and navigate to the project folder:
+   ```
+   cd emptypwmanager
+   python3 main.py
+   ```
+
+2. Follow the on-screen menu to add, retrieve, or save passwords.
+
+---
 
 ## Learning goals
 
