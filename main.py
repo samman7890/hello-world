@@ -93,6 +93,14 @@ def generate_password(length=12):
     chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+"
     return ''.join(random.choice(chars) for _ in range(length))
 
+# Delete Password
+def delete_password(website):
+    if website in vault:
+        del vault[website]
+        print(f"Entry for {website} deleted.")
+    else:
+        print("No entry found for that website.")
+
 # Example interface (for testing)
 if __name__ == "__main__":
     load_passwords()
@@ -102,6 +110,8 @@ if __name__ == "__main__":
         print("3. Save passwords")
         print("4. Generate password (optional)")
         print("5. Exit")
+        print("6. Delete password")
+
         choice = input("Choose an option: ")
         if choice == "1":
             site = input("Website: ")
@@ -119,5 +129,10 @@ if __name__ == "__main__":
             print("Generated password:", generate_password())
         elif choice == "5":
             break
+
+        elif choice == "6":
+            site = input("Website: ")
+            delete_password(site)
+            save_passwords()
         else:
             print("Invalid choice.")
